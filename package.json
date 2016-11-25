@@ -1,7 +1,7 @@
 {
-  "name": "glorious-frontend",
+  "name": "album-demo",
   "version": "0.0.0",
-  "description": "Frontend application foundation featuring TypeScript, React, and Sass.",
+  "description": "Frontend experiment featuring TypeScript, React, and Sass.",
   "main": "index.js",
   "private": true,
   "scripts": {

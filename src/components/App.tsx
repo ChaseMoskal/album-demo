@@ -15,7 +15,8 @@ export default class App extends React.Component<AppProps, AppState> {
   render() {
     return (
       <div className="app">
-        <h1>Glorious Frontend</h1>
+        <h1>Album Demo WIP</h1>
+        <p>Based on Chase Moskal's <a href="https://github.com/ChaseMoskal/glorious-frontend">glorius-frontend</a>.</p>
         <hr/>
         <Counter start={0}/>
       </div>
