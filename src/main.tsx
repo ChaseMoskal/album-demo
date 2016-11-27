@@ -7,14 +7,20 @@ import Track from "./components/Track"
 
 const main =
   <section>
+    <header className="preamble">
+      <h1>Album Explorer — Tech Experiment</h1>
+      <p>Hi! I'm Chase Moskal, and I'm a JavaScript developer.</p>
+      <p><strong>This page is a sample</strong> React web application, written in TypeScript and Sass, which I created as a frontend experiment to play with these technologies.</p>
+      <p>Take a look at this page's <a href="https://github.com/ChaseMoskal/album-demo">source code on GitHub!</a></p>
+    </header>
+
     <Album title="Outer Edges"
-      artist="Colin Stetson & Sarah Neufeld"
+      artist="Noisia"
       art="images/outer-edges.jpg"
-      release="2016"
-      buy="https://store.visionrecordings.nl/product/vsn025-digital/"
-      notes="Recorded live in the studio without the use of overdubs or loops at the End of the World studio in Vermont."
       label="Vision Recordings"
-      genre="Drum and Bass">
+      genre="Drum and Bass"
+      release="2016"
+      buy="https://store.visionrecordings.nl/product/vsn025-digital/">
         <Track title="The Approach" duration="1:29" sample="https://store.visionrecordings.nl/wp-content/uploads/2016/08/Audioclips-Audio-01-The-Approach.mp3"/>
         <Track title="Anomaly" duration="4:03" sample="https://store.visionrecordings.nl/wp-content/uploads/2016/08/Audioclips-Audio-02-Anomaly.mp3"/>
         <Track title="Collider" duration="4:47" sample="https://store.visionrecordings.nl/wp-content/uploads/2016/08/Audioclips-Audio-03-Collider.mp3"/>

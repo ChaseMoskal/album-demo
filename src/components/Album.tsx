@@ -13,9 +13,9 @@ export default class Album extends React.Component<{
   artist: string
   art: string
   release: string
-  notes: string
   label: string
   genre: string
+  notes?: string
   buy?: string
 }, {}> {
 
@@ -39,7 +39,9 @@ export default class Album extends React.Component<{
           {this.props.children}
         </ol>
 
-        <p className="notes">{this.props.notes}</p>
+        {this.props.notes
+          ? <p className="notes">{this.props.notes}</p>
+          : null}
 
         <div className="details">
           <div>

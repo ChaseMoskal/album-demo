@@ -15,7 +15,8 @@
     },
     {
       "taskName": "build",
-      "args": ["run", "build-sass", "-s"]
+      "isBuildCommand": true,
+      "args": ["run", "build-debug", "-s"]
     },
     {
       "taskName": "test",
