@@ -17,8 +17,8 @@ const main =
     <Album title="Outer Edges"
       artist="Noisia"
       art="images/outer-edges.jpg"
-      label="Vision Recordings"
       genre="Drum and Bass"
+      label="Vision Recordings"
       release="2016"
       buy="https://store.visionrecordings.nl/product/vsn025-digital/">
         <Track title="The Approach" duration="1:29" sample="https://store.visionrecordings.nl/wp-content/uploads/2016/08/Audioclips-Audio-01-The-Approach.mp3"/>
@@ -44,11 +44,11 @@ const main =
     <Album title="Never Were the Way She Was"
       artist="Colin Stetson & Sarah Neufeld"
       art="images/never-were-the-way-she-was.jpg"
-      release="April 2015"
-      buy={null}
-      notes="Recorded live in the studio without the use of overdubs or loops at the End of the World studio in Vermont."
+      genre="Avant-garde"
       label="Constellation Records"
-      genre="Avant-garde">
+      release="April 2015"
+      notes="Recorded live in the studio without the use of overdubs or loops at the End of the World studio in Vermont."
+      buy={null}>
         <Track title="The Sun Roars Into View" duration="7:37"/>
         <Track title="Won't Be a Thing to Become" duration="7:37"/>
         <Track title="In the Vespers" duration="6:02"/>

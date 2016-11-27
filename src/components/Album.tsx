@@ -17,7 +17,24 @@ export default class Album extends React.Component<{
   genre: string
   notes?: string
   buy?: string
-}, {}> {
+}, {
+  playingAudioSrc: string
+}> {
+
+  static childContextTypes = {
+    playAudio: React.PropTypes.func
+  }
+
+  constructor(props) {
+    super(props)
+    this.state = {playingAudioSrc: null}
+  }
+
+  getChildContext() {
+    return {
+      playAudio: (src: string) => this.setState({playingAudioSrc: src})
+    }
+  }
 
   render() {
     return (
@@ -34,6 +51,10 @@ export default class Album extends React.Component<{
             </h1>
           </div>
         </div>
+
+        {this.state.playingAudioSrc
+          ? <audio src={this.state.playingAudioSrc} autoPlay={true} loop={true}/>
+          : null}
 
         <ol className="tracklist">
           {this.props.children}
