@@ -9,6 +9,7 @@ import Track from "./Track"
  * Places children into an ordered list (<ol>).
  */
 export default class Album extends React.Component<{
+  id: string
   title: string
   artist: string
   art: string
@@ -38,44 +39,56 @@ export default class Album extends React.Component<{
 
   render() {
     return (
-      <section className="album">
+      <section className="album" id={this.props.id}>
         <div className="cover">
           <div className="art">
             <img src={this.props.art} alt=""/>
           </div>
           <div className="prime-info">
             <h1 className="heading">
-              <strong className="title">{this.props.title}</strong>
+              <span className="title">{this.props.title}</span>
               <br/>
               <span className="artist">{this.props.artist}</span>
             </h1>
           </div>
         </div>
 
-        {this.state.playingAudioSrc
-          ? <audio src={this.state.playingAudioSrc} autoPlay={true} loop={true}/>
-          : null}
+        {
+          this.state.playingAudioSrc
+            ? <audio src={this.state.playingAudioSrc} autoPlay={true} loop={true}/>
+            : null
+        }
 
         <ol className="tracklist">
-          {this.props.children}
+          {
+            React.Children.map(this.props.children, child => React.cloneElement(child as any, {
+              playing: (child as any).props.sample === this.state.playingAudioSrc
+                ? true
+                : false
+            }))
+          }
         </ol>
-
-        {this.props.notes
-          ? <p className="notes">{this.props.notes}</p>
-          : null}
 
         <div className="details">
           <div>
-            <p>{this.props.label}</p>
-            <p>{this.props.genre}</p>
+            <p>Genre: {this.props.genre}</p>
+            <p>© {this.props.label}</p>
           </div>
           <div>
-            <p>Released {this.props.release}</p>
-            {this.props.buy
+            <p>Released: {this.props.release}</p>
+            {
+              this.props.buy
                 ? <p><a href={this.props.buy} target="_blank">Buy now</a></p>
-                : null}
+                : null
+            }
           </div>
         </div>
+
+        {
+          this.props.notes
+            ? <p className="notes">{this.props.notes}</p>
+            : null
+        }
       </section>
     )
   }

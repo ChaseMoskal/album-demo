@@ -8,13 +8,16 @@ import Track from "./components/Track"
 const main =
   <section>
     <header className="preamble">
-      <h1>Album Explorer — Tech Experiment</h1>
-      <p>Hi! I'm Chase Moskal, and I'm a JavaScript developer.</p>
+      <h1>Album Demo — Tech Experiment</h1>
+      <p>Hi. I'm Chase Moskal, and I'm a JavaScript developer.</p>
       <p><strong>This page is a sample</strong> React web application, written in TypeScript and Sass, which I created as a frontend experiment to play with these technologies.</p>
-      <p>Take a look at this page's <a href="https://github.com/ChaseMoskal/album-demo">source code on GitHub!</a></p>
+      <p>Take a look at this page's <a href="https://github.com/ChaseMoskal/album-demo">source code on GitHub!</a> I'm proud of it.</p>
+      <p>Developed for Google Chrome. This page loads in less then one megabyte. Fits well for all viewing sizes.</p>
+      <p>I'm afraid I couldn't find sample audio clips for the second album ¯\_(ツ)_/¯</p>
     </header>
 
-    <Album title="Outer Edges"
+    <Album id="outer-edges"
+      title="Outer Edges"
       artist="Noisia"
       art="images/outer-edges.jpg"
       genre="Drum and Bass"
@@ -41,16 +44,17 @@ const main =
         <Track title="The Approach (Reprise)" duration="2:00" sample="https://store.visionrecordings.nl/wp-content/uploads/2016/08/Audioclips-Audio-18-The-Approach-Reprise.mp3"/>
     </Album>
 
-    <Album title="Never Were the Way She Was"
+    <Album id="never-were-the-way-she-was"
+      title="Never Were the Way She Was"
       artist="Colin Stetson & Sarah Neufeld"
       art="images/never-were-the-way-she-was.jpg"
       genre="Avant-garde"
       label="Constellation Records"
       release="April 2015"
       notes="Recorded live in the studio without the use of overdubs or loops at the End of the World studio in Vermont."
-      buy={null}>
+      buy="https://itunes.apple.com/album/never-were-the-way-she-was/id977805758">
         <Track title="The Sun Roars Into View" duration="7:37"/>
-        <Track title="Won't Be a Thing to Become" duration="7:37"/>
+        <Track title="Won't Be a Thing to Become" duration="3:24"/>
         <Track title="In the Vespers" duration="6:02"/>
         <Track title="And Still They Move" duration="2:57"/>
         <Track title="With the Dark Hug of Time" duration="6:34"/>

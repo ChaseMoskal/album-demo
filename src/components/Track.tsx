@@ -8,46 +8,36 @@ import * as ReactDOM from "react-dom"
 export default class Track extends React.Component<{
   title: string
   duration: string
+  playing?: boolean
   sample?: string
-}, {
-  playing: boolean
-}> {
-
-  context: {
-    playAudio: (src: string) => void
-  }
-
-  static contextTypes = {
-    playAudio: React.PropTypes.func
-  }
+}, {}> {
+  context: { playAudio: (src: string) => void }
+  static contextTypes = { playAudio: React.PropTypes.func }
 
   constructor(props) {
     super(props)
-    this.state = {playing: false}
   }
 
   render() {
-    const play = () => {
-      this.setState({playing: true})
-      this.context.playAudio(this.props.sample)
-    }
-    const stop = () => {
-      this.setState({playing: false})
-      this.context.playAudio(null)
-    }
+    const play = () => this.context.playAudio(this.props.sample)
+    const stop = () => this.context.playAudio(null)
 
     return (
       <li className="track">
 
-        {this.props.sample
-          ? (
-            <button
-              className={this.state.playing ? "play playing" : "play"}
-              onClick={this.state.playing ? stop : play}>
-                {this.state.playing ? <span>❚❚</span> : <span>▶</span>}
-            </button>
-          )
-          : null}
+        {
+          this.props.sample
+            ? (
+              <div className="controls">
+                <button
+                  className={this.props.playing ? "play playing" : "play"}
+                  onClick={this.props.playing ? stop : play}>
+                    {this.props.playing ? <span>❚❚</span> : <span>►</span>}
+                </button>
+              </div>
+            )
+            : null
+        }
 
         <span className="title">{this.props.title}</span>
         <span className="duration">{this.props.duration}</span>
